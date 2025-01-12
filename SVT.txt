@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .flashcard {
+            width: 300px;
+            height: 150px;
+            background-color: #ffffff;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard.clicked .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+
+        .flashcard-front {
+            background-color: #007BFF;
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .flashcard-back {
+            background-color: #FFDD57;
+            color: black;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>Flashcards</h1>
+
+    <div class="flashcard" onclick="this.classList.toggle('clicked')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">Unicellulaire</div>
+            <div class="flashcard-back">Organisme avec une seule cellule.</div>
+        </div>
+    </div>
+
+    <div class="flashcard" onclick="this.classList.toggle('clicked')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">Pluricellulaire</div>
+            <div class="flashcard-back">Organisme avec plusieurs cellules.</div>
+        </div>
+    </div>
+
+    <div class="flashcard" onclick="this.classList.toggle('clicked')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">Encaryote</div>
+            <div class="flashcard-back">Organisme avec un noyau dans ses cellules.</div>
+        </div>
+    </div>
+
+    <div class="flashcard" onclick="this.classList.toggle('clicked')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">Organite</div>
+            <div class="flashcard-back">Structure d'une cellule qui a une fonction précise.</div>
+        </div>
+    </div>
+
+    <div class="flashcard" onclick="this.classList.toggle('clicked')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">Cellule spécialisée</div>
+            <div class="flashcard-back">Cellule qui fait une fonction particulière.</div>
+        </div>
+    </div>
+
+    <div class="flashcard" onclick="this.classList.toggle('clicked')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">Tissu</div>
+            <div class="flashcard-back">Groupe de cellules avec les mêmes caractéristiques.</div>
+        </div>
+    </div>
+
+    <div class="flashcard" onclick="this.classList.toggle('clicked')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">Matrice extracellulaire</div>
+            <div class="flashcard-back">Molécules qui lient les cellules entre elles.</div>
+        </div>
+    </div>
+</body>
+</html>
